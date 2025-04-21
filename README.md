@@ -48,8 +48,6 @@ AI tools like **ChatGPT** were used to:
 
 - Generate accessible and semantic UI markup.
 - Refactor components and improve state management logic.
-- Debug UI issues related to reactivity and Zustand state.
-- Enhance user interactions with animations (like toast notifications).
 - Write this README file clearly and professionally.
 
 ---
