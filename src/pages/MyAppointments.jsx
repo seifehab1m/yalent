@@ -20,7 +20,7 @@ export default function MyAppointments() {
         </div>
       ) : (
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {bookedAppointments.map((appointment, index) => (
+          {bookedAppointments?.map((appointment, index) => (
             <Link
               to={`/doctor/${appointment?.id}`} // Navigate to the doctor's profile page
               key={index}
