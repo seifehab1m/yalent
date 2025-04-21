@@ -14,14 +14,14 @@ export default function DoctorCardHome({ doctor }) {
       aria-describedby={`${cardId}-specialty ${cardId}-location ${cardId}-availability ${cardId}-rating`}
     >
       <article className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-200 p-5 flex flex-col h-full">
-        <img
+        {/* <img
           src={doctor?.photo}
           alt={`Dr. ${doctor?.name}`}
           className="w-full h-48 object-cover rounded-xl mb-4"
           loading="lazy"
           width={192}
           height={192}
-        />
+        /> */}
         <h2
           id={`${cardId}-name`}
           className="text-xl font-semibold text-gray-900 group-hover:text-blue-700"
