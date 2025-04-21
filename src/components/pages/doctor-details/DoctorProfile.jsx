@@ -9,14 +9,14 @@ export default function DoctorProfile({ doctor, handleSelectSlot }) {
   return (
     <>
       <div className="flex-shrink-0 mx-auto md:mx-0">
-        {/* <img
+        <img
           src={doctor?.photo}
           alt={`Dr. ${doctor?.name}`}
           className="w-52 h-52 object-cover rounded-full border-4 border-blue-600 shadow-lg"
           loading="lazy"
           width={208}
           height={208}
-        /> */}
+        />
       </div>
       {/* Doctor Details */}
       <div className="text-center md:text-left mt-6 md:mt-0 flex-1">
