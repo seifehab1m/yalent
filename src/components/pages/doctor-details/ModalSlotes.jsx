@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function ModalSlotes({
   doctor,
@@ -7,17 +7,10 @@ export default function ModalSlotes({
   handleConfirmAppointment,
 }) {
   // State to control toast visibility and message
-  const [toastMessage, setToastMessage] = useState(null);
 
   // Function to handle confirmation and show toast
   const handleConfirmation = () => {
-    setToastMessage("Appointment confirmed!"); // Set the toast message
     handleConfirmAppointment(); // Handle the appointment confirmation
-
-    // Hide the toast after 3 seconds
-    setTimeout(() => {
-      setToastMessage(null); // Reset toast message to hide it
-    }, 3000);
   };
 
   return (
@@ -50,16 +43,6 @@ export default function ModalSlotes({
           </button>
         </div>
       </div>
-
-      {/* Toast Message */}
-      {toastMessage && (
-        <div
-          className="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-60"
-          role="alert"
-        >
-          {toastMessage}
-        </div>
-      )}
     </div>
   );
 }
