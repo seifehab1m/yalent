@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import ReactDOM from "react-dom/client";
 import Home from "./pages/Home.jsx";
 import DoctorDetails from "./pages/DoctorDetails.jsx";
-import MyAppointments from "./pages/myAppointments.jsx";
+import MyAppointments from "./pages/MyAppointments.jsx";
 
 const router = createBrowserRouter([
   {
