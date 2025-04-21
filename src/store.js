@@ -4,11 +4,11 @@ const useStore = create((set) => ({
   bookedAppointments: [],
 
   // Book the appointment with all details
-  bookAppointment: (doctorName, specialty, location, slot) => {
+  bookAppointment: (id, doctorName, specialty, location, slot) => {
     set((state) => ({
       bookedAppointments: [
         ...state.bookedAppointments,
-        { doctorName, specialty, location, slot, },
+        { id, doctorName, specialty, location, slot, },
       ],
     }));
   },

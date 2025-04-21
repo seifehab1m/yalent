@@ -22,7 +22,7 @@ export default function MyAppointments() {
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {bookedAppointments.map((appointment, index) => (
             <Link
-              to={`/doctor/${appointment?.doctorId}`} // Navigate to the doctor's profile page
+              to={`/doctor/${appointment?.id}`} // Navigate to the doctor's profile page
               key={index}
               className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition border border-gray-200"
               role="listitem"

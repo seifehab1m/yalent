@@ -26,6 +26,7 @@ export default function DoctorDetail() {
   const handleConfirmAppointment = () => {
     if (selectedSlot) {
       bookAppointment(
+        doctor?.id,
         doctor?.name,
         doctor?.specialty,
         doctor?.location,
