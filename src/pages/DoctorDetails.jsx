@@ -9,7 +9,7 @@ import ModalSlotes from "../components/pages/doctor-details/ModalSlotes";
 export default function DoctorDetail() {
   const { id } = useParams();
   const doctor = doctors.find((doctor) => doctor?.id === parseInt(id));
-  const { bookAppointment } = useStore();
+  const { bookAppointment, bookedAppointments } = useStore();
   const [selectedSlot, setSelectedSlot] = useState(null);
 
   if (!doctor) {
@@ -56,7 +56,14 @@ export default function DoctorDetail() {
       {/* Appointments Button */}
       <div className="mt-12 text-center">
         <Link to="/my-appointments">
-          <button className="cursor-pointer px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full font-semibold shadow hover:scale-105 transform transition">
+          <button
+            disabled={bookedAppointments.length === 0}
+            className={`px-6 py-3 rounded-full font-semibold shadow transform transition ${
+              bookedAppointments.length === 0
+                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                : "bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:scale-105 cursor-pointer"
+            }`}
+          >
             View My Appointments
           </button>
         </Link>
