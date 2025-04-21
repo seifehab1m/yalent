@@ -32,8 +32,12 @@ export default function MyAppointments() {
                   <h3 className="text-xl font-semibold text-blue-700">
                     {appointment?.doctorName}
                   </h3>
-                  <p className="text-sm text-gray-600">{appointment?.specialty}</p>
-                  <p className="text-sm text-gray-500">{appointment?.location}</p>
+                  <p className="text-sm text-gray-600">
+                    {appointment?.specialty}
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    {appointment?.location}
+                  </p>
                 </div>
                 <div className="mt-2">
                   <span className="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-4 py-2 rounded-full">
@@ -45,6 +49,13 @@ export default function MyAppointments() {
           ))}
         </ul>
       )}
+      <div className="mt-12 text-center">
+        <Link to="/">
+          <button className="cursor-pointer px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 transition">
+            Return to Home
+          </button>
+        </Link>
+      </div>
     </div>
   );
 }
