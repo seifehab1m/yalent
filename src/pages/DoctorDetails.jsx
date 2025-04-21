@@ -1,11 +1,14 @@
 // pages/DoctorDetail.jsx
-import React, { useState } from "react";
+import React, { useState, lazy, Suspense } from "react";
 import { Link, useParams } from "react-router";
 import { doctors } from "../network/mockData";
 import useStore from "../store";
-import DoctorProfile from "../components/pages/doctor-details/DoctorProfile";
 import ModalSlotes from "../components/pages/doctor-details/ModalSlotes";
 import ToastMessage from "../components/shared/ToastMessage";
+
+const DoctorProfile = lazy(() =>
+  import("../components/pages/doctor-details/DoctorProfile")
+);
 
 export default function DoctorDetail() {
   const { id } = useParams();
@@ -36,19 +39,18 @@ export default function DoctorDetail() {
       );
       setSelectedSlot(null);
     }
-    setToastMessage("Appointment Added!"); // Set the toast message
-    setTimeout(() => {
-      setToastMessage(null); // Reset toast message to hide it
-    }, 2000);
+    setToastMessage("Appointment Added!");
+    setTimeout(() => setToastMessage(null), 2000);
   };
 
   return (
     <div className="max-w-6xl mx-auto px-6 py-10">
       <div className="bg-white rounded-3xl shadow-xl p-8 md:flex gap-10 items-center">
-        <DoctorProfile doctor={doctor} handleSelectSlot={handleSelectSlot} />
+        <Suspense fallback={<div>Loading...</div>}>
+          <DoctorProfile doctor={doctor} handleSelectSlot={handleSelectSlot} />
+        </Suspense>
       </div>
 
-      {/* Confirmation Modal */}
       {selectedSlot && (
         <ModalSlotes
           {...{
@@ -60,7 +62,6 @@ export default function DoctorDetail() {
         />
       )}
 
-      {/* Appointments Button */}
       <div className="mt-12 text-center">
         <Link to="/my-appointments">
           <button
@@ -75,7 +76,7 @@ export default function DoctorDetail() {
           </button>
         </Link>
       </div>
-      {/* Toast Message */}
+
       {toastMessage && <ToastMessage {...{ toastMessage }} />}
     </div>
   );

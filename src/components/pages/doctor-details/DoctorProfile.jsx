@@ -13,6 +13,9 @@ export default function DoctorProfile({ doctor, handleSelectSlot }) {
           src={doctor?.photo}
           alt={`Dr. ${doctor?.name}`}
           className="w-52 h-52 object-cover rounded-full border-4 border-blue-600 shadow-lg"
+          loading="lazy"
+          width={208}
+          height={208}
         />
       </div>
       {/* Doctor Details */}

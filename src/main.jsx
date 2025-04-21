@@ -8,15 +8,15 @@ import MyAppointments from "./pages/MyAppointments.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />, 
+    element: <Home />,
   },
   {
-    path: "/doctor/:id", // Dynamic route for individual doctor
-    element: <DoctorDetails />, // Render the DoctorDetail component for this route
+    path: "/doctor/:id",
+    element: <DoctorDetails />,
   },
   {
-    path: "/my-appointments", // Route for My Appointments page
-    element: <MyAppointments />, // Render the MyAppointments component for this route
+    path: "/my-appointments",
+    element: <MyAppointments />,
   },
 ]);
 

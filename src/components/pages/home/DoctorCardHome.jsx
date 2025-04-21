@@ -18,6 +18,9 @@ export default function DoctorCardHome({ doctor }) {
           src={doctor?.photo}
           alt={`Dr. ${doctor?.name}`}
           className="w-full h-48 object-cover rounded-xl mb-4"
+          loading="lazy"
+          width={192}
+          height={192}
         />
         <h2
           id={`${cardId}-name`}
